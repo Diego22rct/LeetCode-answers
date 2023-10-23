@@ -30,3 +30,19 @@ class Solution:
             else:
                 left = mid
         return left if nums[left] == target else -1
+
+    def find(self, nums, target, length):
+        left, right = 0, length
+        while left < right:
+            mid = (left + right + 1) // 2
+
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+
+            if nums[mid] > target:
+                right = mid - 1
+            else:
+                left = mid
+        return left if nums[left] == target else -1
