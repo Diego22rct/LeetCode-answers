@@ -20,6 +20,7 @@ class Solution:
 
         length = len(nums) - 1
 
-        return self.binary_search(
-            nums[: length // 2], 0, length, target
-        ), self.binary_search(nums[length // 2 :], 0, length, target)
+        return [
+            self.binary_search(nums[: length // 2], 0, length, target),
+            self.binary_search(nums[length // 2 :], 0, length, target),
+        ]
